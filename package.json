@@ -4,6 +4,7 @@
   "description": "FRUTIX Premium Fruit Juice Website",
   "main": "index.html",
   "scripts": {
+    "build": "node build.js",
     "dev": "npx http-server -p 3000"
   },
   "keywords": [
