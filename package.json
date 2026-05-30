@@ -1,0 +1,17 @@
+{
+  "name": "frutix-website",
+  "version": "1.0.0",
+  "description": "FRUTIX Premium Fruit Juice Website",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000"
+  },
+  "keywords": [
+    "premium",
+    "juice",
+    "website",
+    "luxury"
+  ],
+  "author": "Antigravity",
+  "license": "ISC"
+}

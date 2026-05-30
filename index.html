@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FRUTIX - Experience the ultimate premium fruit juice. 100% pure cold-pressed fruit, zero added sugar, eco-friendly cartons. Indulge in Strawberry, Mango, Pineapple, Watermelon, Orange, and Grape.">
+    <title>FRUTIX | Ultra-Premium Fruit Juice</title>
+    <!-- Google Fonts: Outfit for Display, Inter for Body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Ambient Glowing Spot (Transitions dynamically) -->
+    <div id="ambient-glow" class="ambient-glow"></div>
+
+    <!-- Header / Navigation -->
+    <header id="main-header" class="main-header">
+        <div class="header-container">
+            <a href="#" class="logo" id="header-logo">
+                FRUTIX<span class="logo-dot">.</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#showcase" class="nav-link">Flavors</a></li>
+                    <li><a href="#why-us" class="nav-link">Why FRUTIX</a></li>
+                    <li><a href="#story" class="nav-link">Our Story</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="#contact" class="btn btn-primary" id="btn-shop-now">Order Now</a>
+                <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <!-- Autoplay Cinematic Video Background -->
+        <div class="hero-video-wrapper">
+            <video class="hero-video" autoplay loop muted playsinline id="hero-opening-video">
+                <source src="assets/videos/strawberry_anim.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="hero-video-overlay"></div>
+        </div>
+
+        <div class="hero-content">
+            <h2 class="hero-tagline animate-reveal">NATURE, ELEVATED.</h2>
+            <h1 class="hero-title animate-reveal">FRUTIX PREMIUM</h1>
+            <p class="hero-description animate-reveal">
+                Pure liquid nature crafted for the refined palate. 100% cold-pressed fruit, zero added sugar, packed in bespoke luxury cartons.
+            </p>
+            <div class="hero-actions animate-reveal">
+                <a href="#showcase" class="btn btn-secondary btn-glow">Explore Flavors</a>
+                <a href="#why-us" class="btn btn-outline">Why Cold-Pressed?</a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" id="scroll-indicator">
+            <span class="scroll-text">Scroll to Refresh</span>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Showcase Section (Scroll-Trigger Pinned Presentation - Image Only) -->
+    <section id="showcase" class="showcase-section">
+        <!-- Pinned Container -->
+        <div class="showcase-pinned">
+            <div class="showcase-grid">
+                
+                <!-- Left Side: Flavor Info -->
+                <div class="showcase-info-panel">
+                    <!-- Progress Tracker -->
+                    <div class="flavor-tracker">
+                        <span class="tracker-current">01</span>
+                        <div class="tracker-line-wrapper">
+                            <div class="tracker-line" id="tracker-progress"></div>
+                        </div>
+                        <span class="tracker-total">06</span>
+                    </div>
+
+                    <!-- Dynamic Content (Controlled by GSAP) -->
+                    <div class="flavor-content-wrapper">
+                        <div class="flavor-card active" data-flavor="strawberry">
+                            <span class="flavor-tagline">Sweet & Bold</span>
+                            <h2 class="flavor-title">Strawberry</h2>
+                            <p class="flavor-description">
+                                Indulge in the sweet, bold essence of sun-ripened field strawberries. A vibrant burst of natural summer sweetness, cold-pressed to perfection to retain every ounce of flavor.
+                            </p>
+                            <div class="flavor-stats">
+                                <div class="stat-item">
+                                    <span class="stat-val">100%</span>
+                                    <span class="stat-label">Organic Fruit</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">0%</span>
+                                    <span class="stat-label">Added Sugar</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">C</span>
+                                    <span class="stat-label">Antioxidant Rich</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flavor-card" data-flavor="mango">
+                            <span class="flavor-tagline">Tropical Velvet</span>
+                            <h2 class="flavor-title">Mango</h2>
+                            <p class="flavor-description">
+                                Velvety, rich, and deeply tropical. Crafted exclusively from the finest handpicked Alphonso mangoes, offering a luscious, smooth escape that is naturally rich in beta-carotene.
+                            </p>
+                            <div class="flavor-stats">
+                                <div class="stat-item">
+                                    <span class="stat-val">100%</span>
+                                    <span class="stat-label">Alphonso</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">0%</span>
+                                    <span class="stat-label">Added Sugar</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">A</span>
+                                    <span class="stat-label">Beta-Carotene</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flavor-card" data-flavor="pineapple">
+                            <span class="flavor-tagline">Golden Refresh</span>
+                            <h2 class="flavor-title">Pineapple</h2>
+                            <p class="flavor-description">
+                                Bright, zesty, and intensely refreshing. The golden sweetness of ripe pineapples balanced with a zesty citrus finish. Energizing and loaded with natural digestive enzymes.
+                            </p>
+                            <div class="flavor-stats">
+                                <div class="stat-item">
+                                    <span class="stat-val">100%</span>
+                                    <span class="stat-label">Golden Ripe</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">0%</span>
+                                    <span class="stat-label">Added Sugar</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">B</span>
+                                    <span class="stat-label">Bromelain Rich</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flavor-card" data-flavor="watermelon">
+                            <span class="flavor-tagline">Pure Hydration</span>
+                            <h2 class="flavor-title">Watermelon</h2>
+                            <p class="flavor-description">
+                                The ultimate hydrator. Crisp, light, and sweet watermelon juice that rejuvenates your body and mind instantly. Packed with natural electrolytes and cell-protecting lycopene.
+                            </p>
+                            <div class="flavor-stats">
+                                <div class="stat-item">
+                                    <span class="stat-val">100%</span>
+                                    <span class="stat-label">Cold-Pressed</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">0%</span>
+                                    <span class="stat-label">Added Sugar</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">K+</span>
+                                    <span class="stat-label">Electrolytes</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flavor-card" data-flavor="orange">
+                            <span class="flavor-tagline">Citrus Burst</span>
+                            <h2 class="flavor-title">Orange</h2>
+                            <p class="flavor-description">
+                                A timeless classic, elevated. Zesty, vibrant, and bursting with aromatic citrus oils and pure pulp from premium Valencia oranges. Your daily powerhouse of organic Vitamin C.
+                            </p>
+                            <div class="flavor-stats">
+                                <div class="stat-item">
+                                    <span class="stat-val">100%</span>
+                                    <span class="stat-label">Valencia</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">0%</span>
+                                    <span class="stat-label">Added Sugar</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">C++</span>
+                                    <span class="stat-label">Immunity Booster</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flavor-card" data-flavor="grape">
+                            <span class="flavor-tagline">Royal Luxury</span>
+                            <h2 class="flavor-title">Grape</h2>
+                            <p class="flavor-description">
+                                Deep, luxurious, and intensely sweet. Cold-pressed Concord grapes providing a rich, full-bodied profile loaded with heart-healthy polyphenols and natural grape skin antioxidants.
+                            </p>
+                            <div class="flavor-stats">
+                                <div class="stat-item">
+                                    <span class="stat-val">100%</span>
+                                    <span class="stat-label">Concord Grapes</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">0%</span>
+                                    <span class="stat-label">Added Sugar</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-val">P</span>
+                                    <span class="stat-label">Polyphenol Rich</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Flavor Navigation Tabs (Quick Select) -->
+                    <div class="flavor-tabs">
+                        <button class="tab-btn active" data-target="0">01</button>
+                        <button class="tab-btn" data-target="1">02</button>
+                        <button class="tab-btn" data-target="2">03</button>
+                        <button class="tab-btn" data-target="3">04</button>
+                        <button class="tab-btn" data-target="4">05</button>
+                        <button class="tab-btn" data-target="5">06</button>
+                    </div>
+                </div>
+
+                <!-- Right Side: 3D Carton Display (Image Only Carousel) -->
+                <div class="showcase-visual-panel" id="carton-viewport">
+                    
+                    <!-- Floating Splash background elements -->
+                    <div class="visual-splash-glow" id="visual-glow"></div>
+
+                    <!-- Interactive floating items container (leaves, droplets) -->
+                    <div class="floating-items-container" id="floating-items">
+                        <!-- Custom SVGs are injected here dynamically via JS to match colors -->
+                    </div>
+
+                    <!-- The Carton Viewer Container (with dynamic mouse tilt) -->
+                    <div class="carton-tilt-container" id="carton-tilt">
+                        
+                        <!-- Layered Flavor Assets (Images Only) -->
+                        <div class="flavor-asset-layer active" data-asset="strawberry">
+                            <img src="assets/images/strawberry_carton.jpg" alt="FRUTIX Strawberry Carton" class="carton-img">
+                        </div>
+
+                        <div class="flavor-asset-layer" data-asset="mango">
+                            <img src="assets/images/mango_carton.jpg" alt="FRUTIX Mango Carton" class="carton-img">
+                        </div>
+
+                        <div class="flavor-asset-layer" data-asset="pineapple">
+                            <img src="assets/images/pineapple_carton.jpg" alt="FRUTIX Pineapple Carton" class="carton-img">
+                        </div>
+
+                        <div class="flavor-asset-layer" data-asset="watermelon">
+                            <img src="assets/images/watermelon_carton.jpg" alt="FRUTIX Watermelon Carton" class="carton-img">
+                        </div>
+
+                        <div class="flavor-asset-layer" data-asset="orange">
+                            <img src="assets/images/orange_carton.png" alt="FRUTIX Orange Carton" class="carton-img">
+                        </div>
+
+                        <div class="flavor-asset-layer" data-asset="grape">
+                            <img src="assets/images/grape_carton.png" alt="FRUTIX Grape Carton" class="carton-img">
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="why-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-title">ELIXIR OF LIFE</span>
+                <h2 class="section-title">THE FRUTIX DIFFERENCE</h2>
+                <p class="section-desc">
+                    We believe in purity without compromise. No additives, no concentrates, no chemical shortcuts. Only the finest liquid fruits.
+                </p>
+            </div>
+
+            <div class="why-grid">
+                <!-- Card 1: 100% Pure Fruit -->
+                <div class="why-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-lemon"></i>
+                    </div>
+                    <h3 class="card-title">100% Pure Fruit</h3>
+                    <p class="card-text">
+                        Every drop of FRUTIX is cold-pressed directly from whole, organically harvested fruits. We never add water, concentrates, or fillers.
+                    </p>
+                    <div class="card-hover-border"></div>
+                </div>
+
+                <!-- Card 2: Zero Added Sugar -->
+                <div class="why-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-ban-smoke"></i>
+                    </div>
+                    <h3 class="card-title">Zero Added Sugar</h3>
+                    <p class="card-text">
+                        We let nature's own sweetness shine. There are absolutely no added sugars, artificial sweeteners, or high-fructose corn syrups.
+                    </p>
+                    <div class="card-hover-border"></div>
+                </div>
+
+                <!-- Card 3: Eco Carton -->
+                <div class="why-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 class="card-title">Eco-Friendly Pack</h3>
+                    <p class="card-text">
+                        Our cartons are 100% recyclable, made primarily from FSC-certified plant materials, reducing carbon footprints by over 40%.
+                    </p>
+                    <div class="card-hover-border"></div>
+                </div>
+
+                <!-- Card 4: Flash Nutrient Lock -->
+                <div class="why-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="card-title">Nutrient Locked</h3>
+                    <p class="card-text">
+                        We use gentle flash-pasteurization to destroy harmful pathogens while locking in 98% of natural enzymes, vitamins, and minerals.
+                    </p>
+                    <div class="card-hover-border"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Story Section (Cinematic Gallery) -->
+    <section id="story" class="story-section">
+        <!-- Mango Background Video Loop -->
+        <div class="story-video-bg-wrapper">
+            <video class="story-video-bg" autoplay loop muted playsinline id="video-story-bg">
+                <source src="assets/videos/mango_anim.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="story-video-bg-overlay"></div>
+        </div>
+        <div class="story-container">
+            <div class="story-flex">
+                <div class="story-image-panel">
+                    <div class="story-img-wrapper item-1">
+                        <div class="story-bg-overlay"></div>
+                    </div>
+                    <div class="story-img-wrapper item-2">
+                        <div class="story-bg-overlay"></div>
+                    </div>
+                </div>
+                <div class="story-content-panel">
+                    <span class="sub-title">FROM HARVEST TO CARTON</span>
+                    <h2 class="section-title">A JOURNEY OF INTENT</h2>
+                    <p>
+                        We source our fruits from certified organic, sustainable family farms across the globe. From the misty valleys where our strawberries ripen, to the sun-soaked orchards of Alphonso mangoes, we seek out agricultural excellence.
+                    </p>
+                    <p>
+                        Our cold-pressing process happens within hours of harvest. By applying hydraulic pressure without heat, we preserve the organic structure of the juice, ensuring it tastes exactly like the freshly harvested fruit.
+                    </p>
+                    <a href="#contact" class="btn btn-primary" id="btn-discover-more">Our Farms</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Newsletter CTA -->
+    <section id="contact" class="contact-section">
+        <!-- Background Ambient Glows -->
+        <div class="contact-glow left-glow"></div>
+        <div class="contact-glow right-glow"></div>
+
+        <div class="container">
+            <div class="contact-grid">
+                
+                <!-- Left: Newsletter -->
+                <div class="newsletter-panel">
+                    <span class="panel-subtitle">EXCLUSIVE CLUB</span>
+                    <h2 class="panel-title">JOIN THE ELITE CLUB</h2>
+                    <p class="panel-desc">
+                        Subscribe to receive early access to limited seasonal flavors, wellness newsletters, and exclusive premium offers.
+                    </p>
+                    <form class="newsletter-form" id="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for joining FRUTIX Elite!');">
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Enter your email" required aria-label="Email address">
+                            <button type="submit" class="btn btn-primary btn-submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+ 
+                <!-- Right: Contact -->
+                <div class="contact-panel">
+                    <span class="panel-subtitle">CONNOISSEUR INQUIRIES</span>
+                    <h2 class="panel-title">EXPERIENCE TASTE</h2>
+                    <p class="panel-desc">
+                        Have a question, feedback, or looking to retail FRUTIX at your high-end venue? Send us a message.
+                    </p>
+                    <form class="contact-form" id="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully. Our team will contact you shortly.');">
+                        <div class="form-grid">
+                            <div class="input-wrap">
+                                <input type="text" class="form-input" placeholder="Name" required aria-label="Name">
+                            </div>
+                            <div class="input-wrap">
+                                <input type="email" class="form-input" placeholder="Email" required aria-label="Email">
+                            </div>
+                        </div>
+                        <div class="input-wrap">
+                            <textarea class="form-input form-textarea" placeholder="Message" required aria-label="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-secondary btn-glow">Send Message</button>
+                    </form>
+                </div>
+ 
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>FRUTIX<span class="logo-dot">.</span></h3>
+                    <p>Elevating daily nourishment into a ritual of luxury and pure sensory delight.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Flavors</h4>
+                    <ul>
+                        <li><a href="#showcase">Strawberry</a></li>
+                        <li><a href="#showcase">Mango</a></li>
+                        <li><a href="#showcase">Pineapple</a></li>
+                        <li><a href="#showcase">Watermelon</a></li>
+                        <li><a href="#showcase">Orange</a></li>
+                        <li><a href="#showcase">Grape</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Brand</h4>
+                    <ul>
+                        <li><a href="#why-us">Why Us</a></li>
+                        <li><a href="#story">Our Story</a></li>
+                        <li><a href="#story">Sourcing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Recycling Program</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 FRUTIX Inc. All Rights Reserved. Pure Liquid Luxury.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP CDN Link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Custom Script -->
+    <script src="main.js"></script>
+</body>
+</html>
